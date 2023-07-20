@@ -8,19 +8,11 @@ function App() {
   // https://www.truemeds.in/ data website 
   // https://www.1mg.com/
   return (
-    
-    
 
     <div>
       <Navbar/>
       <AllRoutes/>
     </div>
- 
- 
-    
-   
-    
-
 
   );
 }

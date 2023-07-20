@@ -2,9 +2,13 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo1 from "../assets/logo1.png";
 import logo2 from "../assets/logo2.png";
+import { useContext} from "react";
+import { Authcontext } from '../context/AuthContextPro';
 
 function Navbar() {
   const location = useLocation();
+
+  const {login, logout, user} = useContext(Authcontext)
 
   return (
     <div className='flex-box bg2 spb nav'>
@@ -29,6 +33,7 @@ function Navbar() {
       </ul>
       <div className='flex-box'>
         <input className='bdr16 btn' type="text" placeholder='Search' />
+          <h1>{user.username}</h1>
         <Link to="/login"><p className='btn bdr4 bg5' >Login</p></Link>
       </div>
     </div>

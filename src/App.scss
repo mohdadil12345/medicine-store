@@ -273,6 +273,9 @@
     max-width: 600px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(5px);
+    text-align: center;
+
+
   }
   .box2 {
     max-width: 800px;
@@ -293,14 +296,59 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+  
     // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
     input{
       padding: 5px 5px;
       border-radius: 4px;
       border: none;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      
     }
+    .loginbtn{
+      cursor: pointer;
+    }
+   
+    
   }
 
 }
 
+
+.paymentpage{
+  background-color: var(--bg5);
+  padding: 100px;
+  height: 1000px;
+
+  .paymentform{
+    border: 1px solid black;
+    background-color: var(--bg4);
+    width: max-content;
+    margin: 50px auto;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  input{
+    padding: 5px 20px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .info_box {
+    // border: 1px solid red;
+    width: max-content;
+    padding: 20px 30px;
+    margin: 20px auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+}
+
+
+.comm_btn{
+    background: var(--bg3);
+    color: white;
+    border-radius: 4px;
+    margin-top: 15px;
+    cursor: pointer;
+}
