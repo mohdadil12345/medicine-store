@@ -1,0 +1,354 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+:root {
+  --bg1: #0070f0;
+  --bg2: rgb(238, 255, 254);
+  --bg3: #1d313d;
+  --bg4: #185255;
+  --bg5: #1cb5bd;
+  --bg6: #dbf4ff;
+  --bg7: #1cb5bdc4;
+  // background: linear-gradient(-45deg, #1cb5bdc4 50%, transparent 50%);
+}
+
+.bg1 {
+  background: var(--bg1);
+  color: white;
+}
+.bg2 {
+  background: var(--bg3);
+  color: white;
+}
+.bg3 {
+  background: white;
+  color: var(--bg3);
+}
+.bg4 {
+  background: var(--bg4);
+  color: white;
+}
+.bg5 {
+  background: var(--bg5);
+  color: white;
+}
+
+.flex-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.flex-column {
+  flex-direction: column;
+}
+
+.bdr4 {
+  border-radius: 4px;
+}
+.bdr16 {
+  border-radius: 16px;
+}
+.spb {
+  justify-content: space-between;
+}
+.nav {
+  padding: 10px 20px;
+  font-weight: 600;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  left: 0;
+  top: 0;
+  .logo {
+    img {
+      height: 41px;
+    }
+    h2 {
+      color: #e0fdff;
+      font-family: cursive;
+      span {
+        color: #79cfd3;
+        font-size: 16px;
+      }
+    }
+  }
+  ul {
+    a {
+      color: white;
+    }
+    li {
+      padding: 10px 20px;
+      border-radius: 4px;
+    }
+    li:hover {
+      background: var(--bg5);
+    }
+    .active {
+      padding: 10px 20px;
+
+      background: var(--bg5);
+    }
+  }
+}
+
+.btn {
+  padding: 10px 40px;
+  border: none;
+  font-weight: 600;
+}
+.home_details {
+  max-width: 500px;
+  margin: 20px;
+  padding: 20px;
+}
+
+.padd {
+  padding: 20px;
+}
+
+.top-section {
+  height: 100vh;
+  padding: 30px;
+  //  background: url("./assets/wave2.svg");
+  background-size: cover;
+  background: linear-gradient(-45deg, var(--bg7) 50%, rgb(238, 255, 254) 50%);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  img {
+    width: 400px;
+  }
+}
+
+.welcome {
+  border-radius: 16px 0;
+  color: var(--bg3);
+  text-align: center;
+  position: relative;
+  // background: rgba(255, 255, 255, 0.5);
+  // backdrop-filter: blur(20px);
+  /* From https://css.glass */
+  .abcd {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    z-index: 10;
+  }
+  .circle {
+    background: #dbfff7;
+    position: absolute;
+    top: -200px;
+    left: -50px;
+    height: 300px;
+    width: 300px;
+    z-index: 1;
+    border-radius: 50%;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 18px;
+    max-width: 600px;
+  }
+}
+
+.rating {
+  color: white;
+  font-weight: 600;
+  span {
+    color: var(--bg4);
+    font-size: 24px;
+  }
+}
+
+.section2 {
+  padding: 40px;
+  // color: white;
+  background: linear-gradient(0deg, var(--bg5) 50%, white 50%);
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+  // border: 2px solid var(--bg5) !important;
+  .sec2info {
+    width: 100%;
+    p,
+    h2 {
+      color: var(--bg3);
+    }
+  }
+  // background: var(--bg6);
+  // background: var(--bg4);
+  .sec2img {
+    margin-bottom: 70px;
+    gap: 40px;
+    div {
+      // background: white;
+      backdrop-filter: blur(100px);
+      // background: var(--bg3);
+      height: 220px;
+      width: 220px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+      img {
+        width: 80px;
+      }
+      p {
+        font-weight: bold;
+        color: var(--bg3);
+      }
+    }
+  }
+}
+
+.medicine_page {
+  position: relative;
+  margin-top: 60px;
+  .medicine_filter {
+    background: var(--bg3);
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 60px 10px 10px;
+    color: white;
+  }
+  .medicine {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 400px);
+    gap: 20px;
+    justify-content: center;
+    width: calc(100% - 200px);
+    margin-left: auto;
+    padding: 20px;
+
+    .medi_details {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+      padding: 20px;
+      border-radius: 4px;
+      color: var(--bg3);
+      img {
+        height: 200px;
+        width: 200px;
+        object-fit: contain;
+      }
+      button {
+        background: var(--bg3);
+        color: white;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+.details_page {
+  margin-top: 70px;
+
+  .details_data {
+    gap: 60px;
+  }
+
+  .box1 {
+    // border: 1px solid black;
+    padding: 20px;
+    max-width: 600px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    text-align: center;
+
+
+  }
+  .box2 {
+    max-width: 800px;
+    padding: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+  }
+}
+
+.loginpage {
+  width: 400px;
+  margin: 200px auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px 30px;
+  text-align: center;
+
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    input{
+      padding: 5px 5px;
+      border-radius: 4px;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      
+    }
+    .loginbtn{
+      cursor: pointer;
+    }
+   
+    
+  }
+
+}
+
+
+.paymentpage{
+  background-color: var(--bg5);
+  padding: 100px;
+  height: 1000px;
+
+  .paymentform{
+    border: 1px solid black;
+    background-color: var(--bg4);
+    width: max-content;
+    margin: 50px auto;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  input{
+    padding: 5px 20px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+  .info_box {
+    // border: 1px solid red;
+    width: max-content;
+    padding: 20px 30px;
+    margin: 20px auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+}
+
+
+.comm_btn{
+    background: var(--bg3);
+    color: white;
+    border-radius: 4px;
+    margin-top: 15px;
+    cursor: pointer;
+}
