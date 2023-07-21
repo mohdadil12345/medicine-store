@@ -41,7 +41,7 @@ const  pass_val = (e) => {
     }
 
   return (
- <>
+ <div className='abcd signup-page'>
      <div className="signupage loginpage"  >
       <h1> Signup</h1>
       <form onSubmit={(e) => signform(e)}>
@@ -53,7 +53,7 @@ const  pass_val = (e) => {
       </form>
     </div>
 
- </>
+ </div>
   )
 }
 
