@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 
@@ -22,21 +23,20 @@ function MediDetails() {
 
   return (
     <div className="details_page">
-      <h1>medicine details</h1>
-      <div className="details_data flex-box">
+      <div className="details_data flex-box" style={{alignItems: "flex-start"}}>
         <div className="box1">
-          <h1>{data.name}</h1>
           <img src={data.img1} alt="" />
+          
+        </div>
+        <div className="box2">
+        <h1>{data.name}</h1>
           <div className="flex-box spb">
             <p>price:{data.price}</p>
             <p>{data.discount}</p>
           </div>
-          {/* <h3>Composition: </h3> */}
-          <p> Composition: {data.composition}</p>
          <Link to = "/payment"> <button className="btn comm_btn" >Buy Now</button></Link>
-        </div>
-        <div className="box2">
           <h3>description:</h3>
+          <p> Composition: {data.composition}</p>
           <p>{data.description}</p>
           <h3>uses:</h3>
           <p>{data.uses}</p>

@@ -32,7 +32,7 @@ function Navbar() {
     
       </ul>
       <div className='flex-box'>
-        <input className='bdr16 btn' type="text" placeholder='Search' />
+        <input className='bdr4 btn ser' type="text" placeholder='Search' />
           <h1>{user.username}</h1>
         <Link to="/login"><p className='btn bdr4 bg5' >Login</p></Link>
       </div>
