@@ -58,7 +58,7 @@ function Navbar() {
           <Link to="/offer">Offer</Link>
         </li>
         <li className={location.pathname === "/cart" ? "active" : ""}>
-          <Link to="/cart">Cart <span>{cartlen}</span></Link>
+          <Link to="/cart">Cart</Link>
         </li>
       </ul>
       <div className="flex-box">
