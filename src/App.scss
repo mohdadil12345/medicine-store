@@ -99,11 +99,17 @@
     }
     li:hover {
       background: var(--bg5);
+      a{
+        color: white;
+      }
     }
     .active {
       padding: 10px 20px;
 
       background: var(--bg5);
+      a{
+        color: white;
+      }
     }
   }
   .ser{
@@ -111,6 +117,7 @@
     color: #181818;
     &::placeholder{
       color: #7ba7a2;
+      
     }
   }
 }
@@ -120,7 +127,9 @@
   border: none;
   font-weight: 600;
   margin-bottom: 0;
+  margin-top: 10px;
   background: #1cb5bd;
+  width: 100%;
 }
 .home_details {
   max-width: 500px;
@@ -414,3 +423,12 @@ button::before{
 
 }
 
+
+.medititle {
+  // background-color: red;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  // background-color: yellow;
+  width: 100%;
+}

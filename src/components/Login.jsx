@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Authcontext } from "../context/AuthContextPro";
+import { toast } from "react-hot-toast";
 
 function Login() {
   const [email, setemail] = useState("");
@@ -32,11 +33,27 @@ function Login() {
     }
     console.log(checkval);
     if (checkval) {
-      alert("login_successfull");
+      toast.success("login Successfully", {
+        style: {
+          borderRadius: "50px",
+          background: "#000428",
+          color: "#ffffff",
+          padding: "1rem 1.5rem",
+          fontWeight: "600",
+        },
+      });
       login(checkval);
       navigate("/");
     } else {
-      alert("something went wrong");
+      toast.error("wrong credential", {
+        style: {
+          borderRadius: "50px",
+          background: "#000428",
+          color: "#ffffff",
+          padding: "1rem 1.5rem",
+          fontWeight: "600",
+        },
+      });
       navigate("/login");
     }
   };

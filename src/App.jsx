@@ -3,6 +3,8 @@ import "./App.scss";
 import Navbar from "./components/Navbar";
 import AllRoutes from "./components/AllRoutes";
 import Footer from "./components/Footer";
+import { Toaster } from "react-hot-toast";
+
 
 
 function App() {
@@ -14,6 +16,7 @@ function App() {
       <Navbar/>
       <AllRoutes/>
       <Footer/>
+      <Toaster/>
     </div>
 
   );

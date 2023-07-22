@@ -1,10 +1,12 @@
 
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
+import { Authcontext } from "../context/AuthContextPro";
 
 function MediDetails() {
   const [data, setdata] = useState([]);
   const { id } = useParams();
+  const { login, logout, user } = useContext(Authcontext);
 
   const fetchdata = async (id) => {
     try {
@@ -20,6 +22,13 @@ function MediDetails() {
   useEffect(() => {
     fetchdata(id);
   }, [id]);
+
+
+
+
+
+
+
 
   return (
     <div className="details_page">
