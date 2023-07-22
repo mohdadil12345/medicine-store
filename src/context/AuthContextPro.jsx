@@ -1,4 +1,5 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 
 export const Authcontext = createContext();
 
@@ -11,6 +12,7 @@ const initialData = {
 
 function AuthContextPro({ children }) {
     const[user, setuser] = useState(initialData)
+    // const [prod, setprod] = useState([])
 
 
     const login = (checkval) => {
@@ -27,11 +29,12 @@ function AuthContextPro({ children }) {
             isAuth : false,
             email : "",
             password  : ""
+            
            })
+       
     }
 
 
-  
 
 
   return <Authcontext.Provider value = {{login, logout, user}}>

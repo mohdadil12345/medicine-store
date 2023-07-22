@@ -2,7 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Loading from "./Loading";
 import { Authcontext } from "../context/AuthContextPro";
+import axios from "axios";
+import { toast } from "react-hot-toast";
 // import data from "../db.json";
+
+
 
 function Medicines() {
   let [data, setdata] = useState([]);
@@ -10,7 +14,24 @@ function Medicines() {
   let [loading, setloading] = useState(false);
 
 
+
   const { login, logout, user } = useContext(Authcontext);
+
+
+  const [cartitem, setcartitem] = useState([]);
+  
+
+  const getdata = () => {
+    axios.get(`https://semi-mock2.onrender.com/cars`).then((res) => {
+      console.log(res.data);
+      setcartitem(res.data);
+    });
+  };
+
+  useEffect(() => {
+    getdata();
+  }, []);
+
 
   const fetchdata = async () => {
     setloading(true);
@@ -46,7 +67,7 @@ function Medicines() {
 
   // search by name
   const serchfilter = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
 
     let filter_search = globaldata.filter((ele) =>
       ele.name.toLowerCase().includes(e.target.value.toLowerCase())
@@ -62,40 +83,98 @@ function Medicines() {
     navig(`/medicine/${item.id}`);
   };
 
-
-  // cart
-  const ADDTOCART = () => {
-    if (user.isAuth == true) {
-      
-      alert("item added to cart")
-    }
-    else{
-      alert("please login 1st")
-    }
+  const navigat = useNavigate();
+  const ADDTOCART = (item) => {
+    console.log(item);
   
-  }
+      // Check if the item already exists in the cart
+      const isItemInCart = cartitem.some((cartItem) => cartItem.id === item.id);
+  
+      if (!isItemInCart) {
+        axios
+          .post(`https://semi-mock2.onrender.com/cart`, item)
+          .then((res) => {
+            // console.log(res.data);
+            setcartitem([...cartitem, item]); // Update local state
+            localStorage.setItem("cartlength", cartitem.length + 1); // Update localStorage
+     
 
+            toast.success("item added to cart", {
+              style: {
+                borderRadius: "50px",
+                background: "#000428",
+                color: "#ffffff",
+                padding: "1rem 1.5rem",
+                fontWeight: "600",
+              },
+            });
+          })
+          .catch((error) => {
+            console.error("Error adding item to cart:", error);
+            toast.error("Failed to add item to cart.");
+          });
+      } else {
+        // Display a message if the item is already in the cart
+        toast.error("Item is already in the cart.", {
+          style: {
+            borderRadius: "50px",
+            background: "#FF0000",
+            color: "#ffffff",
+            padding: "1rem 1.5rem",
+            fontWeight: "600",
+          },
+        });
+      }
+    
+  };
+  
+
+  // const ADDTOCART = (item) => {
+  //   console.log(item);
+  //   if (user.isAuth == true) {
+  //     axios
+  //       .post(`https://semi-mock2.onrender.com/cars`, item)
+
+  //       .then((res) => {
+  //         // console.log(res.data);
+  //       });
+
+  //       toast.success("item added to cart", {
+  //         style: {
+  //           borderRadius: "50px",
+  //           background: "#000428",
+  //           color: "#ffffff",
+  //           padding: "1rem 1.5rem",
+  //           fontWeight: "600",
+  //         },
+  //       });
+  //   } else {
+  //     alert("please login 1st");
+  //   }
+  // };
 
   return (
     <div className="medicine_page">
       <div className="medicine_filter">
         <h4>FILTER</h4>
-        <select class="form-select my-2" aria-label="Default select example"
-           onChange={(e) => fil_data(e)}>
+        <select
+          class="form-select my-2"
+          aria-label="Default select example"
+          onChange={(e) => fil_data(e)}
+        >
           <option value="">Filter By Category</option>
           <option value="tablet">tablet</option>
           <option value="syrup">syrup</option>
           <option value="injection">injection</option>
           <option value="cream">cream</option>
-          
         </select>
 
         <input
           type="text"
           placeholder="Search"
           onChange={(e) => serchfilter(e)}
-          className='bdr4 btn btn-light'
-          style={{width: "100%"}}
+          className="bdr4 btn btn-light"
+          style={{ width: "100%" }}
         />
       </div>
 
@@ -106,17 +185,21 @@ function Medicines() {
           {data.map((item) => (
             <div key={item.id} className="medi_details">
               <img src={item.img1} alt="" />
-              <h2>{item.name}</h2>
+              <h2 className="medititle">{item.name}</h2>
               <div className="flex-box ">
-                <p>{item.price}</p>
-                <p>{item.discount}</p>
+                <strong>{item.price}</strong>
+                <strong>{item.discount}</strong>
               </div>
-           <div className="flex-box">
-           <button className="btn btn-dark" onClick={() => GotoDetails(item)}>
+
+              <button
+                className="btn btn-dark"
+                onClick={() => GotoDetails(item)}
+              >
                 Buy Now
               </button>
-              <button className="btn btn-dark" onClick={() => ADDTOCART(item)} >Add To Cart</button>
-           </div>
+              <button className="btn btn-dark" onClick={() => ADDTOCART(item)}>
+                Add To Cart
+              </button>
             </div>
           ))}
         </div>
@@ -127,11 +210,7 @@ function Medicines() {
 
 export default Medicines;
 
-
-
-
 // old Ui
-
 
 // import React, { useEffect, useState } from "react";
 // import { useNavigate } from "react-router-dom";
