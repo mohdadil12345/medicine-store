@@ -55,7 +55,7 @@ function Navbar() {
           <Link to="/medicine">Medicine</Link>
         </li>
         <li className={location.pathname === "/about" ? "active" : ""}>
-          <Link to="/about">About</Link>
+          <Link to="/offer">Offer</Link>
         </li>
         <li className={location.pathname === "/cart" ? "active" : ""}>
           <Link to="/cart">Cart <span>{cartlen}</span></Link>

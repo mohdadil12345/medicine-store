@@ -92,7 +92,7 @@ function Medicines() {
   
       if (!isItemInCart) {
         axios
-          .post(`https://semi-mock2.onrender.com/cars`, item)
+          .post(`https://semi-mock2.onrender.com/cart`, item)
           .then((res) => {
             // console.log(res.data);
             setcartitem([...cartitem, item]); // Update local state
