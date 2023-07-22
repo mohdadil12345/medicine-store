@@ -111,7 +111,7 @@ function Medicines() {
           })
           .catch((error) => {
             console.error("Error adding item to cart:", error);
-            toast.error("Failed to add item to cart.");
+            toast.error("Item is already in the cart.");
           });
       } else {
         // Display a message if the item is already in the cart
@@ -129,29 +129,7 @@ function Medicines() {
   };
   
 
-  // const ADDTOCART = (item) => {
-  //   console.log(item);
-  //   if (user.isAuth == true) {
-  //     axios
-  //       .post(`https://semi-mock2.onrender.com/cars`, item)
-
-  //       .then((res) => {
-  //         // console.log(res.data);
-  //       });
-
-  //       toast.success("item added to cart", {
-  //         style: {
-  //           borderRadius: "50px",
-  //           background: "#000428",
-  //           color: "#ffffff",
-  //           padding: "1rem 1.5rem",
-  //           fontWeight: "600",
-  //         },
-  //       });
-  //   } else {
-  //     alert("please login 1st");
-  //   }
-  // };
+ 
 
   return (
     <div className="medicine_page">

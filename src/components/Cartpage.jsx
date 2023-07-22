@@ -36,30 +36,30 @@ function Cartpage() {
   return (
     <div className="cartpage">
       <div style={{ marginTop: "100px" }}>
-        <h1>Cartpage per aapka swagat hai</h1>
       </div>
 
       {cartitem.length > 0 ? (
         <div className=" cartdata">
           {cartitem.map((item) => (
             <div className="flex-box cartdata">
-              <h>{item.category}</h>
               <img src={item.img1} alt="" />
               <h2>{item.name}</h2>
               <strong>{item.price}</strong>
-              <button className="deltebtn" onClick={() => deletebtn(item.id)}>DELETE</button>
+              <button className="deltebtn btn comm_btn" onClick={() => deletebtn(item.id)}>DELETE</button>
+          <Link to = "/payment"> <button className="btn comm_btn" >Buy Now</button></Link>
+
             </div>
           ))}
         </div>
       ) : (
         <div className="empty-cart">
-          <p>Your cart is empty.</p>
+          <h1>Your cart is empty.</h1>
           <img
             src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2p4bHhhNm1tcnF0ejVuMzVsdWM3MmI4YjdqbWtpM3UzN3psanIyZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/giXLnhxp60zEEIkq8K/giphy.gif"
             alt=""
           />
           <Link to="/medicine">
-            <button className="add-to-cart-btn">Go to Products</button>
+            <button className="add-to-cart-btn"><h3>Go to medicine page</h3></button>
           </Link>
         </div>
       )}
