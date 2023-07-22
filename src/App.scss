@@ -344,7 +344,6 @@
 .paymentpage{
   background-color: var(--bg5);
   padding: 100px;
-  height: 1000px;
 
   .paymentform{
     border: 1px solid black;
@@ -389,3 +388,29 @@
 button::before{
   cursor: pointer;
 }
+
+.footer{
+  cursor: pointer;
+  display: flex;
+  // gap: 80px;
+  background: var(--bg6);
+  padding: 20px 30px ;
+  align-items: center;
+  justify-content: space-evenly;
+
+  .follow_btn{
+   display: flex;
+   gap: 20px;
+
+  }
+
+  p:hover{
+    background-color: rgb(57, 85, 90);
+    width: max-content;
+    color: white;
+    border-radius: 4px;
+  }
+  
+
+}
+

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Loading from "./Loading";
+import { Authcontext } from "../context/AuthContextPro";
 // import data from "../db.json";
 
 function Medicines() {
@@ -8,12 +9,15 @@ function Medicines() {
   let [globaldata, setglobaldata] = useState([]);
   let [loading, setloading] = useState(false);
 
+
+  const { login, logout, user } = useContext(Authcontext);
+
   const fetchdata = async () => {
     setloading(true);
     try {
       let res = await fetch(`https://semi-mock2.onrender.com/medicines`);
       let data = await res.json();
-      console.log(data);
+      // console.log(data);
       setdata(data);
       setloading(false);
       setglobaldata(data);
@@ -58,6 +62,20 @@ function Medicines() {
     navig(`/medicine/${item.id}`);
   };
 
+
+  // cart
+  const ADDTOCART = () => {
+    if (user.isAuth == true) {
+      
+      alert("item added to cart")
+    }
+    else{
+      alert("please login 1st")
+    }
+  
+  }
+
+
   return (
     <div className="medicine_page">
       <div className="medicine_filter">
@@ -93,9 +111,12 @@ function Medicines() {
                 <p>{item.price}</p>
                 <p>{item.discount}</p>
               </div>
-              <button className="btn btn-dark" onClick={() => GotoDetails(item)}>
+           <div className="flex-box">
+           <button className="btn btn-dark" onClick={() => GotoDetails(item)}>
                 Buy Now
               </button>
+              <button className="btn btn-dark" onClick={() => ADDTOCART(item)} >Add To Cart</button>
+           </div>
             </div>
           ))}
         </div>
