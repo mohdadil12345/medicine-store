@@ -12,6 +12,7 @@ const initialData = {
 function AuthContextPro({ children }) {
     const[user, setuser] = useState(initialData)
 
+
     const login = (checkval) => {
         setuser({
             isAuth : true,
@@ -28,6 +29,9 @@ function AuthContextPro({ children }) {
             password  : ""
            })
     }
+
+
+  
 
 
   return <Authcontext.Provider value = {{login, logout, user}}>

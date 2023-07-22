@@ -5,6 +5,7 @@ import customer from "../assets/customer.png";
 import specialist from "../assets/specialist.png";
 import chamber from "../assets/chamber.png";
 import privacy from "../assets/privacy.png";
+import Footer from "./Footer";
 
 function Home() {
   return (
@@ -59,6 +60,7 @@ function Home() {
           </div>
         </div>
       </div>
+   
     </div>
   );
 }
