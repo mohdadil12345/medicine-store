@@ -79,7 +79,7 @@ function Payment() {
           <input className="btn bdr4 comm_btn" type="submit" />
         </form>
       ) : (
-        <div className="info_box flex-box flex-column">
+        <div className="info_box">
           <div className="flex-box">
             <h3>Name :</h3>
             <p> {`${info.firstName} ${info.lastName}`} </p>

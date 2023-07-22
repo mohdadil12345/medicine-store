@@ -6,6 +6,7 @@ import  "../components/Offer.scss"
 function Offer() {
   const [offer, setOffer] = useState([]);
   const navigate = useNavigate();
+
   axios
     .get("https://semi-mock2.onrender.com/offers")
     .then((res) => setOffer(res.data));
@@ -13,6 +14,8 @@ function Offer() {
   const moveto = () => {
     navigate("/medicine");
   };
+
+ 
 
   return (
     <div>
