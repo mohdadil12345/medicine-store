@@ -30,11 +30,6 @@ function Navbar() {
     navig("/login")
     
   }
-
-
-  useEffect(() => {
-    setabc(cartlen.length)
-  }, [abc])
   
 
 

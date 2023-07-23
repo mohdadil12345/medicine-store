@@ -11,6 +11,7 @@ import PrivateRoute from './PrivateRoute'
 import Payment from './Payment'
 import Cartpage from './Cartpage'
 import Offer from './Offer'
+import Order from './Order'
 
 function AllRoutes() {
   return (
@@ -26,6 +27,7 @@ function AllRoutes() {
             <Route path = "/payment" element = {<Payment/>}/>
             <Route path = "/cart" element = {<PrivateRoute><Cartpage/></PrivateRoute>}/>
             <Route path = "/offer" element = {<Offer/>}/>
+            <Route path = "/order" element = {<Order/>}/>
         </Routes>
     </div>
   )
