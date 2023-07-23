@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-function ORDER() {
+function Order(props) {
     return (
       <div className="info_box">
       <div className="flex-box">
@@ -24,4 +24,4 @@ function ORDER() {
   )
 }
 
-export default ORDER
+export default Order
