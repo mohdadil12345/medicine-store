@@ -13,6 +13,7 @@ const initial = {
 
 function Payment() {
   const [info, setinfo] = useState(initial);
+  const[show, setshow] = useState(false)
 
   const inputchange = (e) => {
     //   console.log(e.target.name);
@@ -28,13 +29,16 @@ function Payment() {
     e.preventDefault();
     console.log(info);
     toast.success("your order is booked")
+    setshow(true)
     
    
   };
 
   return (
+
     <div className="paymentpage">
-      <form
+
+      {!show?    <form
         onSubmit={(e) => form_submit(e)}
         className="flex-box flex-column paymentform"
       >
@@ -80,25 +84,26 @@ function Payment() {
 
         <input className="btn bdr4 comm_btn" type="submit" />
       </form>
-
-      {/* <div className="info_box">
-        <div className="flex-box">
-          <h3>Name :</h3>
-          <p> {`${info.firstName} ${info.lastName}`} </p>
-        </div>
-        <div className="flex-box">
-          <h3>Email :</h3>
-          <p>{info.email}</p>
-        </div>
-        <div className="flex-box">
-          <h3>Address :</h3>
-          <p>{info.address}</p>
-        </div>
-        <div className="flex-box">
-          <h3>Mobile :</h3>
-          <p>{info.phoneNumber}</p>
-        </div>
-      </div> */}
+:   <div className="info_box">
+<div className="flex-box">
+  <h3>Name :</h3>
+  <p> {`${info.firstName} ${info.lastName}`} </p>
+</div>
+<div className="flex-box">
+  <h3>Email :</h3>
+  <p>{info.email}</p>
+</div>
+<div className="flex-box">
+  <h3>Address :</h3>
+  <p>{info.address}</p>
+</div>
+<div className="flex-box">
+  <h3>Mobile :</h3>
+  <p>{info.phoneNumber}</p>
+</div>
+</div>}
+   
+   
       
     </div>
   );
