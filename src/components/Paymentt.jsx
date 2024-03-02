@@ -102,13 +102,12 @@ const Paymentt = () => {
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
   const { cartdata } = useContext(Authcontext);
-  // const [totalcost, settotalcost] = useState(0)
 
   console.log("cartdata", cartdata);
   
 
   let address_ls = JSON.parse(localStorage.getItem("address"));
-  let meal_ls = JSON.parse(localStorage.getItem("meal"));
+  // let meal_ls = JSON.parse(localStorage.getItem("meal"));
 
   const navigate = useNavigate();
 
@@ -123,11 +122,22 @@ const Paymentt = () => {
 
 
 
-    // for (let i = 0; i < cartdata.length; i++) {
-    // return   settotalcost += cartdata[i].price
+
+  //  let sum = 0
+  //   for (let i = 0; i < cartdata.length; i++) {
+  //     // console.log(cartdata[i].price)
+
+  //     sum += cartdata[i].price
+     
       
-    // }
+  //   }
+  //   console.log("sum", sum)
  
+  const sum = cartdata.reduce((acc, current) => acc + current.price, 0);
+
+  console.log("Total Price:", sum);
+
+
     
 
 // console.log(totalcost())
@@ -204,7 +214,7 @@ const Paymentt = () => {
               {cartdata.map((ele)=> (
                   <div className="order-item">
                     <img src={ele.img1} alt="" />
-                      <b>${ele.price}</b>
+                      <b>{ele.price}</b>
                   </div>
               ))}
 
@@ -225,7 +235,8 @@ const Paymentt = () => {
 
               <div>
                 <p className="price-det">
-                  <b>${meal_ls[meal_ls.length - 1].deliveryCharge}</b>
+                  {/* <b>${meal_ls[meal_ls.length - 1].deliveryCharge}</b> */}
+                  <p>price details charge</p>
                 </p>
               </div>
             </div>
@@ -241,7 +252,7 @@ const Paymentt = () => {
 
               <div>
                 <p className="price-det" style={{ fontSize: "20px" }}>
-              totlcost : $ 
+              Totlcost : {sum}
                 </p>
               </div>
             </div>
@@ -254,9 +265,9 @@ const Paymentt = () => {
             <div>
               <h4>Deliver To</h4>
               <p>
-                Name: {address_ls[address_ls.length - 1].firstName}{" "}
+              {address_ls[address_ls.length - 1].firstName}{" "}
                 {address_ls[address_ls.length - 1].lastName} <br />
-                Address: {address_ls[address_ls.length - 1].addDetails},{" "}
+              {address_ls[address_ls.length - 1].addDetails}
                 {address_ls[address_ls.length - 1].add} <br />
                 {address_ls[address_ls.length - 1].city}{" "}
                 {address_ls[address_ls.length - 1].state}{" "}
@@ -273,13 +284,7 @@ const Paymentt = () => {
                 marginTop: "10px",
               }}
             >
-              <div>
-                <h4>Delivery Instruction</h4>
-                <p>Provide your instruction (if any)</p>
-              </div>
-              <div>
-                <p className="price-det">edit</p>
-              </div>
+         
             </div>
 
             <div style={{ marginBottom: "5px" }}>
@@ -287,10 +292,6 @@ const Paymentt = () => {
               <p>{`${new Date().toDateString()}`}</p>
             </div>
 
-            <div style={{ marginBottom: "5px" }}>
-              <h4>Special instructions</h4>
-              <p>No special instruction</p>
-            </div>
           </div>
         </div>
       </Details>

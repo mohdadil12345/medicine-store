@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 
 function Cartpage() {
   const [cartitem, setcartitem] = useState([]);
-  const { setcartdata} = useContext(Authcontext);
+  const { setcartdata, cartdata} = useContext(Authcontext);
 
   const getdata = () => {
     axios.get(`https://semi-mock2.onrender.com/cart`).then((res) => {
       // console.log(res.data);
       setcartitem(res.data);
-      setcartdata(res.data);
+      // setcartdata(res.data);
       // localStorage.setItem("cartlength" , res.data.length)
     });
   };
@@ -37,8 +37,11 @@ function Cartpage() {
 
 
 
-  const buynow = (id) => {
-      alert(id)
+  const buynow = (item) => {
+// console.log(item)
+setcartdata([...cartdata, item]);
+
+
   }
 
   return (
@@ -55,7 +58,7 @@ function Cartpage() {
               <strong>{item.price}</strong>
               <button className="deltebtn btn comm_btn" onClick={() => deletebtn(item.id)}>DELETE</button>
           {/* <Link to = "/pay"> <button className="btn comm_btn" >Buy Now</button></Link> */}
-          <button onClick={()=>buynow(item.id)} className="btn comm_btn" >Buy Now</button>
+          <button onClick={()=>buynow(item)} className="btn comm_btn" >Buy Now</button>
 
             </div>
           ))}

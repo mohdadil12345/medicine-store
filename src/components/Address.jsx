@@ -20,7 +20,7 @@ const Address = () => {
 
   let address_ls = JSON.parse(localStorage.getItem("address")) || []
 
-  let meal_ls = JSON.parse(localStorage.getItem("meal")) || []
+  // let meal_ls = JSON.parse(localStorage.getItem("meal")) || []
 
   const navigate = useNavigate()
 
@@ -49,7 +49,7 @@ const Address = () => {
 
 
       localStorage.setItem("address", JSON.stringify(address_ls))
-      localStorage.setItem("meal", JSON.stringify(meal_ls))
+      // localStorage.setItem("meal", JSON.stringify(meal_ls))
 
     navigate('/pay')
   }
