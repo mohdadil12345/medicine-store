@@ -8,10 +8,10 @@ import MediDetails from './MediDetails'
 import Login from './Login'
 import Signup from './Signup'
 import PrivateRoute from './PrivateRoute'
-import Payment from './Payment'
 import Cartpage from './Cartpage'
 import Offer from './Offer'
-import Order from './Order'
+import Paymentt from './Paymentt'
+import Address from './Address'
 
 function AllRoutes() {
   return (
@@ -24,10 +24,10 @@ function AllRoutes() {
             <Route path = "/medicine/:id" element = {<MediDetails/>}/>
             <Route path = "/login" element = {<Login/>}/>
             <Route path = "/signup" element = {<Signup/>}/>
-            <Route path = "/payment" element = {<Payment/>}/>
             <Route path = "/cart" element = {<PrivateRoute><Cartpage/></PrivateRoute>}/>
             <Route path = "/offer" element = {<Offer/>}/>
-            <Route path = "/order" element = {<Order/>}/>
+            <Route path = "/pay" element = {<Paymentt/>}/>
+            <Route path = "/address" element = {<Address/>}/>
         </Routes>
     </div>
   )
