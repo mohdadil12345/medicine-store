@@ -11,14 +11,18 @@ function Offer() {
     .get("https://semi-mock2.onrender.com/offers")
     .then((res) => setOffer(res.data));
 
-  const moveto = () => {
-    navigate("/medicine");
-  };
 
+const buynow = () => {
+  navigate("/address")
+}
  
 
   return (
+
+
+
     <div>
+
       <div style={{ textAlign: "center", color: "teal", margin: "25px 0" }}>
         <h1> QUICK BUY! Get offers on medicines</h1>
       </div>
@@ -48,13 +52,14 @@ function Offer() {
                 <span> Offer Price: </span>
                 {item.price}
               </p>
-              <button className="btn btn-dark" onClick={moveto}>VIEW</button>
+              <button onClick={buynow} className="btn btn-dark">Buy Now</button>
             </div>
           </div>
         ))}
       </div>
     
     </div>
+
   );
 }
 

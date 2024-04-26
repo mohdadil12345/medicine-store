@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Flex } from "@chakra-ui/react";
 import  "../components/Payment.scss"
 import { Authcontext } from "../context/AuthContextPro";
+import toast from "react-hot-toast";
 
 const PaymentContainer = styled.div`
   display: flex;
@@ -13,7 +14,9 @@ const PaymentContainer = styled.div`
   padding: 20px;
   justify-content: space-evenly;
   width: 95%;
+  
   margin: auto;
+
 
   @media only screen and (max-width: 920px) {
     display: flex;
@@ -27,6 +30,10 @@ const PaymentForm = styled.form`
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* border: 2px solid red; */
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  border: 1px solid #1cb5bd;
+
 
   @media only screen and (max-width: 920px) {
     width: 80%;
@@ -46,6 +53,9 @@ const InputField = styled.input`
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: 1px solid #1cb5bd;
+  border-radius: 8px;
 `;
 
 const PaymentButton = styled.button`
@@ -67,6 +77,8 @@ const Details = styled.div`
   padding: 30px;
   border-radius: 10px;
   margin-top: 100px;
+  border: 1px solid #1cb5bd;
+
 
   @media only screen and (max-width: 920px) {
     width: 80%;
@@ -114,33 +126,22 @@ const Paymentt = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle payment logic here
-    alert("Order Placed Successfully");
+    toast.success("Order Placed Successfully", {
+      style: {
+        borderRadius: "50px",
+        background: "#000428",
+        color: "#ffffff",
+        padding: "30px",
+        fontWeight: "600",
+        
+      },
+    });
+   
 
-    navigate("/");
+    // navigate("/");
   };
 
 
-
-
-
-  //  let sum = 0
-  //   for (let i = 0; i < cartdata.length; i++) {
-  //     // console.log(cartdata[i].price)
-
-  //     sum += cartdata[i].price
-     
-      
-  //   }
-  //   console.log("sum", sum)
- 
-  const sum = cartdata.reduce((acc, current) => acc + current.price, 0);
-
-  console.log("Total Price:", sum);
-
-
-    
-
-// console.log(totalcost())
 
 
   return (
@@ -203,24 +204,8 @@ const Paymentt = () => {
               }}
               id="prod-details"
             >
-              {/* <div>
-                <h6 style={{ fontSize: "15px" }}>Tablet cost</h6>
-            
-              </div> */}
+          
 
-              <div className="order-cont">
-                <p className="price-det-a">
-
-              {cartdata.map((ele)=> (
-                  <div className="order-item">
-                    <img src={ele.img1} alt="" />
-                      <b>{ele.price}</b>
-                  </div>
-              ))}
-
-                
-                </p>
-              </div>
             </div>
 
             <hr />
@@ -252,7 +237,7 @@ const Paymentt = () => {
 
               <div>
                 <p className="price-det" style={{ fontSize: "20px" }}>
-              Totlcost : {sum}
+              Totlcost :
                 </p>
               </div>
             </div>

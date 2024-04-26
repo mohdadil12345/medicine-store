@@ -43,7 +43,7 @@ function MediDetails() {
             <p>price:{data.price}</p>
             <p>{data.discount}</p>
           </div>
-         <Link to = "/address"> <button className="btn comm_btn" >Buy Now</button></Link>
+         <Link to = "/address"> <button className="buynow" >Buy Now</button></Link>
           <h3>description:</h3>
           <p> Composition: {data.composition}</p>
           <p>{data.description}</p>

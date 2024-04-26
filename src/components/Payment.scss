@@ -1,42 +1,43 @@
-
-
-#oder-container{
+#oder-container {
+    
 }
 
-.box1{
-    // border: 1px solid green;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-padding: 10px;
-border-radius: 8px;
-
+.box1 {
+  // border: 1px solid green;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  padding: 10px;
+  border-radius: 8px;
+//   border: 2PX SOLID RED;
+box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
-.box2{
-    // border: 1px solid red;
-    margin-top: 10px;
-padding: 10px;
-border-radius: 8px;
+.box2 {
+  // border: 1px solid red;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 8px;
 
-
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
-.order-cont{
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-
+.order-cont {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
 }
 
-.order-item{
-//   border: 1px solid red;
-padding: 10px;
-gap: 10px;
+.order-item {
+  //   border: 1px solid red;
+  padding: 10px;
+  gap: 10px;
 }
 
-.order-item img{
-    height: 100px;
-    width: 100px;
+.order-item img {
+  height: 100px;
+  width: 100px;
 }

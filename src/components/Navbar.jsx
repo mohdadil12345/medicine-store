@@ -55,12 +55,12 @@ function Navbar() {
         <li className={location.pathname === "/cart" ? "active" : ""}>
           <Link to="/cart">Cart</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/pay">Pay</Link>
-        </li>
-        <li>
+        </li> */}
+        {/* <li>
           <Link to="/address">address</Link>
-        </li>
+        </li> */}
       </ul>
       <div className="flex-box">
         <input className="bdr4 btn ser" type="text" placeholder="Search" />

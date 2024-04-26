@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Authcontext } from "../context/AuthContextPro";
 import { toast } from "react-hot-toast";
 
@@ -7,6 +7,7 @@ function Login() {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const navigate = useNavigate();
+  const location = useLocation()
 
   const authval = useContext(Authcontext);
   const { login, logout, user } = useContext(Authcontext);
@@ -43,7 +44,9 @@ function Login() {
         },
       });
       login(checkval);
-      navigate("/");
+      navigate(location.state);
+      // navigate(location.state?.from );
+      
     } else {
       toast.error("wrong credential", {
         style: {
@@ -54,34 +57,40 @@ function Login() {
           fontWeight: "600",
         },
       });
-      navigate("/login");
+      // navigate("/login");
+      
+      
     }
   };
 
   return (
     <div className="abcd">
       <div className="loginpage">
-        {/* <h1>{user.email}</h1> */}
-        <h1> Login</h1>
+       
+       <h1 style={{color:"#51c6cd"}}>Login</h1>
+   
         <form onSubmit={(e) => login_form(e)}>
+
+          <label htmlFor="">email</label>
           <input
             type="email"
             placeholder="email"
             onChange={(e) => emailvalue(e)}
-            className="btn btn-dark"
+           
           />
+
+
+          <label htmlFor="">password</label>
           <input
             type="password"
             placeholder="password"
             onChange={(e) => passvalue(e)}
-            className="btn btn-dark"
+           
           />
-          <input
-            type="submit"
-            value="Login"
-            className="loginbtn btn btn-dark"
-          />
-          <Link to="/signup">Create account</Link>
+         
+
+         <button type="submit">Login</button>
+          <Link className="link" to="/signup">Create account</Link>
         </form>
       </div>
     </div>

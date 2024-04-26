@@ -4,6 +4,7 @@ import {useNavigate} from 'react-router-dom'
 
 const Address = () => {
 
+  
 
   const [deliveryCharge, setDeliveryCharge] = useState(5);
 
@@ -100,83 +101,7 @@ const Address = () => {
           </div>
         </InputField>
 
-        <Details id="oder-container">
-          <h2>Order Summary</h2>
-
-          <div
-            style={{
-              display: "flex",
-              gap: "35px",
-              marginBottom: "5px",
-              marginTop: "10px",
-            }}
-            id="prod-details"
-          >
-      
-
-          </div>
-
-          <hr />
-
-          <div
-            style={{ display: "flex", gap: "30px", marginBottom: "10px" }}
-            id="prod-shipping"
-          >
-            <div>
-              <p>Packaging and shipping charge</p>
-            </div>
-
-            <div>
-              <p className='price-det-a'>
-                <b>${deliveryCharge}</b>
-              </p>
-            </div>
-          </div>
-          <hr />
-
-          <div
-            style={{ display: "flex", gap: "60px", marginBottom: "10px" }}
-            id="prod-total"
-          >
-            <div>
-              <p style={{ fontSize: "20px" }}>Total Amount Payable</p>
-            </div>
-
-          
-          </div>
-          <hr />
-
-          <div>
-            <h2>Delivery Summary</h2>
-
-            <div
-              style={{
-                display: "flex",
-                gap: "40px",
-                marginBottom: "10px",
-                marginTop: "10px",
-              }}
-            >
-              <div>
-                <h4>Delivery Instruction</h4>
-                <p>Provide your instruction (if any)</p>
-              </div>
-              <div>
-                <p className='price-det-a'>edit</p>
-              </div>
-            </div>
-
-            <div style={{ marginBottom: "5px" }}>
-              <h4>Estimated Delivery</h4>
-              <p>{`${new Date().toDateString()}`}</p>
-            </div>
-
-            <div style={{ marginBottom: "5px" }}>
-              <h4>Special instructions</h4>
-              <p>No special instruction</p>
-            </div>
-          </div>
-        </Details>
+       
       </Main>
 
       <h2 style={{ textAlign: "center", marginTop: "100px" }}>FAQ</h2>
@@ -292,17 +217,22 @@ flex-direction: column;
 width: 60%;
 justify-content: space-around;
 /* padding-top: 20px; */
-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+/* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 border: 1px solid #ccc;
 border-radius: 10px;
 margin-top: 100px;
+gap: 20px;
+border: 1px solid #1cb5bd;
+padding: 30px;
 
 
-input,
-  select {
+input,select {
     height: 55px;
-    border: 1px solid #cccccc;
+    border: 1px solid #1cb5bd;
     border-radius: 15px;
+    padding: 10px;
+
   }
 
   @media only screen and (max-width: 920px) {

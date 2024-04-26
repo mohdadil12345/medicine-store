@@ -55,6 +55,8 @@
 
 .bdr4 {
   border-radius: 4px;
+  padding: 5px;
+  border: none;
 }
 .bdr16 {
   border-radius: 16px;
@@ -248,7 +250,7 @@
   background: #d2f6f7;
   .medicine_filter {
     background: var(--bg5);
-    width: 200px;
+    width: 215px;
     height: 100vh;
     position: fixed;
     top: 76px;
@@ -257,6 +259,11 @@
     padding: 15px;
     color: white;
   }
+
+::placeholder{
+  color: var(--bg5);
+}
+
   .medicine {
     display: grid;
     grid-template-columns: repeat(auto-fit, 400px);
@@ -265,6 +272,8 @@
     width: calc(100% - 200px);
     margin-left: auto;
     padding: 20px;
+
+
 
     .medi_details {
       display: flex;
@@ -285,11 +294,7 @@
         width: 200px;
         object-fit: contain;
       }
-      // button {
-      //   background: var(--bg3);
-      //   color: white;
-      //   border-radius: 4px;
-      // }
+    
     }
   }
 }
@@ -318,6 +323,39 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     border-radius: 4px;
     backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    
+    h3{
+      color: var(--bg5);
+    }
+    h1{
+      color: var(--bg5);
+    }
+
+    .spb p{
+      color: #185255;
+    }
+
+
+.buynow{
+  padding: 10px;
+  border-radius: 4px;
+  width: 100px;
+  background-color: rgb(5, 5, 35);
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+
+.buynow:hover{
+  background-color: var(--bg5);
+  color: white;
+
+
+}
+
   }
 }
 
@@ -326,31 +364,118 @@
   margin: 200px auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 20px 30px;
-  text-align: center;
+  border-radius: 8px;
+
 
   form{
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
   
     // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
     input{
-      padding: 5px 5px;
+      padding: 8px;
       border-radius: 4px;
       border: none;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      outline-color: var(--bg5);
       
+    } 
+
+
+    button{
+      background-color: black;
+      padding: 8px;
+      color: white;
+      font-size: bold;
+      border-radius: 4px;
     }
+
+    .link{
+      color: var(--bg4);
+    }
+
+  
+
     .loginbtn{
       cursor: pointer;
     }
+
+  ::placeholder{
+    color: var(--bg7);
+  }
    
+  label{
+    color: black;
+      font-weight: bold;
+      font-family: 'Courier New', Courier, monospace;
+  }
     
   }
 
 }
 
+
+
+.signupage{
+  width: 400px;
+  margin: 200px auto;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px 30px;
+  border-radius: 8px;
+
+  .head1{
+    color: var(--bg7);
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  span{
+    color: red;
+    font-weight: bold;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    input{
+      padding: 8px;
+      border-radius: 4px;
+      border: none;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      outline-color: var(--bg5);
+      
+    } 
+
+    button{
+      background-color: black;
+      padding: 8px;
+      color: white;
+      font-size: bold;
+      border-radius: 4px;
+    }
+    .link{
+      color: white;
+      // font-weight: bold;
+    }
+
+::placeholder{
+  color: var(--bg7);
+}
+
+    label{
+      color: black;
+      font-weight: bold;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+  }
+}
 
 .paymentpage{
   background-color: var(--bg5);
@@ -453,5 +578,32 @@ button::before{
   }
 }
 
+.filter{
+  color: var(--bg4);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.container{
+  width: 100px;
+  margin: 200px auto;
+}
+
+.loader {
+  height: 45px;
+  width: 45px;
+  border-top: 8px solid rgb(128, 201, 215);
+  border-bottom: 8px solid rgb(116, 206, 224);
+  border-right: 8px solid rgb(13, 113, 133);
+  border-left: 8px solid rgb(13, 113, 133);
+
+  animation: spin 0.7s  linear infinite ;
+  border-radius: 50%;
+}
 
 
+@keyframes spin {
+
+100%{
+  transform: rotate(360deg);
+}
+}

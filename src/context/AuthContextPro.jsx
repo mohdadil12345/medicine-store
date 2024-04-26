@@ -13,7 +13,7 @@ const initialData = {
 function AuthContextPro({ children }) {
     const[user, setuser] = useState(initialData)
     const[cartdata, setcartdata] = useState([])
-    // const [prod, setprod] = useState([])
+    const [total, settoal] = useState("")
 
 
     const login = (checkval) => {
@@ -38,7 +38,7 @@ function AuthContextPro({ children }) {
 
 
 
-  return <Authcontext.Provider value = {{login, logout, user, cartdata, setcartdata}}>
+  return <Authcontext.Provider value = {{settoal, total, login, logout, user, cartdata, setcartdata}}>
     {children}
     </Authcontext.Provider>;
 

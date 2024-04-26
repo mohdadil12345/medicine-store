@@ -134,7 +134,7 @@ function Medicines() {
   return (
     <div className="medicine_page">
       <div className="medicine_filter">
-        <h4>FILTER</h4>
+        <h4 className="filter">FILTER</h4>
         <select
           class="form-select my-2"
           aria-label="Default select example"
@@ -151,7 +151,7 @@ function Medicines() {
           type="text"
           placeholder="Search"
           onChange={(e) => serchfilter(e)}
-          className="bdr4 btn btn-light"
+          className="bdr4"
           style={{ width: "100%" }}
         />
       </div>
