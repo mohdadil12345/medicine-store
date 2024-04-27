@@ -113,9 +113,9 @@ const Paymentt = () => {
   const [cardNumber, setCardNumber] = useState("");
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
-  const { cartdata } = useContext(Authcontext);
-
+  const { cartdata , total} = useContext(Authcontext);
   console.log("cartdata", cartdata);
+  const [charge, setcharge] = useState(30)
   
 
   let address_ls = JSON.parse(localStorage.getItem("address"));
@@ -142,7 +142,7 @@ const Paymentt = () => {
   };
 
 
-
+  
 
   return (
     <PaymentContainer>
@@ -193,7 +193,7 @@ const Paymentt = () => {
             className="box1"
         
           >
-            <h2>Order Summary</h2>
+            <h2 style={{color : "tomato", fontFamily:"cursive"}}>Order Summary</h2>
 
             <div
               style={{
@@ -215,29 +215,25 @@ const Paymentt = () => {
               id="prod-shipping"
             >
               <div>
-                <p>Packaging and shipping charge</p>
+                <p className="infodeliver">Packaging and shipping charge</p>
               </div>
+                <p  className="price-det" style={{ fontSize: "20px", color:"tomato"  }}>₹ {charge }</p>
 
-              <div>
-                <p className="price-det">
-                  {/* <b>${meal_ls[meal_ls.length - 1].deliveryCharge}</b> */}
-                  <p>price details charge</p>
-                </p>
-              </div>
+          
             </div>
             <hr />
 
             <div
-              style={{ display: "flex", gap: "60px", marginBottom: "10px" }}
+              style={{ display: "flex", gap: "20px", marginBottom: "10px" }}
               id="prod-total"
             >
               <div>
-                <p style={{ fontSize: "20px" }}>Total Amount Payable</p>
+                <p className="infodeliver" >Total Amount Payable</p>
               </div>
 
               <div>
-                <p className="price-det" style={{ fontSize: "20px" }}>
-              Totlcost :
+                <p  className="price-det" style={{ fontSize: "20px", color:"tomato" }}>
+                ₹  {charge + total}
                 </p>
               </div>
             </div>
@@ -245,11 +241,11 @@ const Paymentt = () => {
           </div>
 
           <div className="box2">
-            <h2>Delivery Summary</h2>
+            <h2 style={{color : "tomato", fontFamily:"cursive"}}>Delivery Summary</h2>
 
             <div>
-              <h4>Deliver To</h4>
-              <p>
+              <h4 style={{color : "tomato", fontFamily:"cursive"}}>Deliver To</h4>
+              <p className="infodeliver">
               {address_ls[address_ls.length - 1].firstName}{" "}
                 {address_ls[address_ls.length - 1].lastName} <br />
               {address_ls[address_ls.length - 1].addDetails}
@@ -274,7 +270,7 @@ const Paymentt = () => {
 
             <div style={{ marginBottom: "5px" }}>
               <h4>Estimated Delivery</h4>
-              <p>{`${new Date().toDateString()}`}</p>
+              <p className="infodeliver">{`${new Date().toDateString()}`}</p>
             </div>
 
           </div>

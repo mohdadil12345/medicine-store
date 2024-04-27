@@ -26,8 +26,8 @@ function AllRoutes() {
             <Route path = "/medicine/:id" element = {<MediDetails/>}/>
             <Route path = "/login" element = {<Login/>}/>
             <Route path = "/signup" element = {<Signup/>}/>
-            <Route path = "/cart" element = {<Cartpage/>}/>
-            {/* <Route path = "/cart" element = {<PrivateRoute><Cartpage/></PrivateRoute>}/> */}
+            {/* <Route path = "/cart" element = {<Cartpage/>}/> */}
+            <Route path = "/cart" element = {<PrivateRoute><Cartpage/></PrivateRoute>}/>
             <Route path = "/offer" element = {<Offer/>}/>
             <Route path = "/pay" element = {<Paymentt/>}/>
             <Route path = "/address" element = {<Address/>}/>

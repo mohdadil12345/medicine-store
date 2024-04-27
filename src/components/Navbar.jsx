@@ -63,14 +63,14 @@ function Navbar() {
         </li> */}
       </ul>
       <div className="flex-box">
-        <input className="bdr4 btn ser" type="text" placeholder="Search" />
-        <h1>{user.username}</h1>
+        {/* <input className="bdr4 btn ser" type="text" placeholder="Search" /> */}
+        <h1 style={{color:"tomato", fontFamily:"unset"}}>{user.username}</h1>
 
         {user.isAuth ? (
             <p onClick={()=> logoutt()} className="btn bdr4 bg5">Logout</p>
         ) : (
           <Link to="/login">
-            <p className="btn bdr4 bg5">Login</p>
+            <p className="bdr4 loginbtn">Login</p>
           </Link>
         )}
       </div>    

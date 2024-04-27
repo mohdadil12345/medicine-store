@@ -2,20 +2,17 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import  "../components/Offer.scss"
+import { toast } from "react-hot-toast";
 
 function Offer() {
   const [offer, setOffer] = useState([]);
+  
   const navigate = useNavigate();
 
   axios
     .get("https://semi-mock2.onrender.com/offers")
     .then((res) => setOffer(res.data));
 
-
-const buynow = () => {
-  navigate("/address")
-}
- 
 
   return (
 
@@ -52,7 +49,6 @@ const buynow = () => {
                 <span> Offer Price: </span>
                 {item.price}
               </p>
-              <button onClick={buynow} className="btn btn-dark">Buy Now</button>
             </div>
           </div>
         ))}

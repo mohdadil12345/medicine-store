@@ -7,7 +7,7 @@ import "../components/Cart.scss";
 
 function Cartpage() {
   const [cartitem, setcartitem] = useState([]);
-  const { setcartdata, cartdata, settoal } = useContext(Authcontext);
+  const { setcartdata, cartdata, settoal , total} = useContext(Authcontext);
 
 
   const nav = useNavigate()
@@ -113,11 +113,12 @@ function Cartpage() {
           </div>
           <div className="subtotal">
             <p>Sub Total</p>
-            <p>{disPrice}</p>
+            <p>₹ {disPrice.toFixed(2)}</p>
           </div>
         <button onClick={() => buynow()}>
                 Buy Now
               </button>
+            
         </div>
       </div>
     </div>

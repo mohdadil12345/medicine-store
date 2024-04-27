@@ -44,7 +44,7 @@ function Login() {
         },
       });
       login(checkval);
-      navigate(location.state);
+      navigate("/");
       // navigate(location.state?.from );
       
     } else {
